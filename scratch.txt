@@ -1,0 +1,80 @@
+Hosted network
+
+Resources
+------------
+
+
+http://stackoverflow.com/questions/12294820/enable-internet-connection-sharing-programmatically
+http://www.wi-fiplanet.com/tutorials/article.php/3849841/How-to-Create-Wireless-Hosted-Networks-in-Windows-7.htm
+https://github.com/utapyngo/icsmanager
+http://www.thewindowsclub.com/enable-internet-sharing-wifi-hotspot-windows-8
+http://www.windowsproblem.biz/2013/01/how-to-create-wireless-ad-hoc-to.html
+http://www.addictivetips.com/windows-tips/how-to-create-wireless-ad-hoc-internet-connection-in-windows-8/
+
+WlanHostedNetworkStartUsing
+
+--------------------------------------------------------------------------------------------------------------------
+
+# netsh wlan set hostednetwork mode=allow ssid=LallousLabX key=asdfg12345
+
+At least 8 chars long for SSID
+
+Enable the hosted network:
+
+# netsh wlan start hostednetwork
+
+
+Wireless LAN adapter Local Area Connection* 14:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Microsoft Hosted Network Virtual Adapter
+   Physical Address. . . . . . . . . : 6E-88-14-38-41-8C
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+ 
+--------------------------------------------------------------------------------------------------------------------
+
+C:\Windows\system32>netsh wlan show hostednetwork
+
+Hosted network settings
+-----------------------
+    Mode                   : Allowed
+    SSID name              : "LallousLabX"
+    Max number of clients  : 100
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+
+Hosted network status
+---------------------
+    Status                 : Started
+    BSSID                  : 6e:88:14:38:41:8c
+    Radio type             : 802.11n
+    Channel                : 11
+    Number of clients      : 0
+
+--------------------------------------------------------------------------------------------------------------------
+
+Hosted network settings
+-----------------------
+    Mode                   : Allowed
+    SSID name              : "LallousLab"
+    Max number of clients  : 100
+    Authentication         : WPA2-Personal
+    Cipher                 : CCMP
+
+Hosted network status
+---------------------
+    Status                 : Not started
+
+--------------------------------------------------------------------------------------------------------------------
+C:\Windows\system32>netsh wlan show drivers | find "Hosted network supported"
+    Hosted network supported  : Yes
+    Hosted network supported  : Yes
+--------------------------------------------------------------------------------------------------------------------
+
+C:\Windows\system32>netsh wlan stop hostednetwork
+The hosted network stopped.
+
+--------------------------------------------------------------------------------------------------------------------
+
