@@ -78,6 +78,8 @@ namespace WifiShare
             {
                 cbSourceNetworks.BeginUpdate();
 
+                cbSourceNetworks.Items.Clear();
+
                 int idx = -1;
                 foreach (var nic in IcsManager.GetAllIPv4Interfaces())
                 {
