@@ -1,7 +1,7 @@
 @echo off
-	goto main
+    goto main
 
--- Info	--
+-- Info --
 WifiShare helper script 
 
 (c) Elias Bachaalany <lallousz-x86@yahoo.com>
@@ -16,7 +16,7 @@ WifiShare helper script
     if "%1"=="start" goto start
     if "%1"=="stop"  goto stop
     if "%1"=="check" goto check
-	if "%1"=="show"	 goto show
+    if "%1"=="show"  goto show
     
     goto usage
 
@@ -48,14 +48,14 @@ WifiShare helper script
     goto end
 
 :show
-	netsh wlan show hostednetwork
-	goto end
+    netsh wlan show hostednetwork
+    goto end
 
 :usage
     echo Usage: %0 start ssid_name key_value
     echo        %0 stop
-	echo        %0 check (returns error code only)
-	echo        %0 show
+    echo        %0 check (returns error code only)
+    echo        %0 show
     
     goto end
 
